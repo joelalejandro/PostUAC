@@ -3,7 +3,7 @@
 Plugin Name: PostUAC
 Plugin URI: http://moobin.net
 Description: User Access Control at the post level.
-Version: 0.3
+Version: 0.3.1
 Author: Joel A. Villarreal Bertoldi (at Moobin)
 Author URI: http://moobin.net
 License: MIT
@@ -104,8 +104,6 @@ function postuac_get_allowed_pages() {
   };
   $query = "echo=0&title_li=&exclude=" . implode(",", $excluded);
   $postuac_user_allowed_pages = wp_list_pages($query);
-
-  print_r(wp_get_nav_menus());
 
   add_filter("wp_list_pages", "postuac_delete_forbidden_nav_menu_items");
 }
